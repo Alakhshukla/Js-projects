@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temp.Converter</title>
+    
+    <link rel="shortcut icon" href="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" type="image/x-icon">
+  </head>
+  <style>
+    /* CSS */
+
+    body {
+      padding: 50px 50px;
+      background-color: rgb(196, 153, 236);
+    }
+    h1 {
+      text-align: center;
+    }
+    #container {
+      text-align: center;
+      background-color: rgb(134, 193, 244);
+      padding: 50px 50px;
+      border: 3px solid black;
+      border-radius: 10px;
+      height: 99px;
+    }
+    .inp {
+      display: inline-block;
+    }
+    label {
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .input {
+      padding: 20px;
+      border: 2px solid black;
+      border-radius: 5px;
+      margin: 10px;
+      font-size: 20px;
+      text-align: center;
+      font-weight: 30px;
+    }
+  </style>
+
+  <!-- HTML -->
+  <body>
+    <h1>Temprature Converter</h1>
+    <div id="container">
+      <div class="inp">
+        <label>Celsius</label>
+        <input type="number" id="cel" class="input" />
+      </div>
+      <div class="inp">
+        <label>Fahrenheit</label>
+        <input type="number" id="frh" class="input" />
+      </div>
+    </div>
+  </body>
+
+  <script>
+    // JavaScript
+    var cel = document.getElementById("cel");
+    var frh = document.getElementById("frh");
+
+    cel.addEventListener("input", function () {
+      let c = this.value;
+      let f = (c * 9) / 5 + 32;
+      if (!Number.isInteger(f)) {
+        f = f.toFixed(4);
+      }
+      frh.value = f;
+    });
+
+    frh.addEventListener("input", function () {
+      let f = this.value;
+      let c = ((f - 32) * 5) / 9;
+      if (!Number.isInteger(c)) {
+        c = c.toFixed(4);
+      }
+      cel.value = c;
+    });
+  </script>
+</html>

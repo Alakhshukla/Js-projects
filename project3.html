@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colorChanger</title>
+</head>
+<style>
+   .button{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    margin: 10px;
+   }
+#grey{
+    background-color: rgb(180, 170, 170);
+}
+#blue{
+    background-color: rgb(108, 36, 215);
+}
+#black{
+    background-color: rgb(23, 22, 22);
+}
+#green{
+    background-color: rgb(47, 212, 119);
+}
+</style>
+<body>
+    <div class="box">
+        <h2>Color Switcher</h2>
+     <div class="button" id="grey" ></div>
+      <div class="button" id="blue"></div>
+      <div class="button" id="black"></div>
+      <div class="button" id="green"></div>
+      <h2>select anyone color background-color will get change</h2>
+    </div>
+</body>
+<script>
+   const buttons = document.querySelectorAll('.button');
+const body = document.querySelector('body');
+ buttons.forEach(function(button){
+    console.log(button)
+    button.addEventListener('click', function(e){
+console.log(e);
+    console.log(e.target);
+    if(e.target.id==='grey'){
+        body.style.backgroundColor = e.target.id;
+    }
+    if(e.target.id==='blue'){
+        body.style.backgroundColor = e.target.id;
+    }
+    if(e.target.id==='black'){
+        body.style.backgroundColor = e.target.id;
+        body.style.color = 'white';
+    }
+    if(e.target.id==='green'){
+        body.style.backgroundColor = e.target.id;
+    }
+ })
+ })
+
+</script>
+</html>
